@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Mobile_Android_APP" verbose="5">
+<listeners>
+      <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+      <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+      <listener class-name="atu.testng.reports.listeners.ATUReportsListener"></listener>
+  	  <listener class-name="atu.testng.reports.listeners.ConfigurationListener"></listener>
+  	  <listener class-name="atu.testng.reports.listeners.MethodListener"></listener>
+  </listeners>
+  
+    <test name="Test_Cases_for_Mobile_WEB_Android">
+    <parameter name="MobileID" value=""/>
+    <parameter name="MobileVersion" value=""/>
+    <parameter name="AppiumRunningAt" value="http://127.0.0.1:4723/wd/hub"/>
+   	<parameter name="AppEnvironment" value=""/>
+   	<parameter name="DBEnvironment" value=""/>
+   	<parameter name="Browser" value="chrome"/>
+	<classes>
+	   <class
+	    name="" />
+	</classes>
+  </test>
+</suite>

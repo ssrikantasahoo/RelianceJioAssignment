@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="WEB_test_Suite" verbose="5">
+<listeners>
+      <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+      <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+      <listener class-name="atu.testng.reports.listeners.ATUReportsListener"></listener>
+  	  <listener class-name="atu.testng.reports.listeners.ConfigurationListener"></listener>
+  	  <listener class-name="atu.testng.reports.listeners.MethodListener"></listener>
+  </listeners>
+  <test name="Test_Cases_for_WEB" group-by-instances="true">
+      <parameter name="platform" value="WINDOWS"/>
+      <parameter name="browser" value="firefox"/>
+      <parameter name="url" value="https://www.google.com/drive/"/>
+	<classes>
+	   	<class name="com.RelianceJio.srikanta.GRID.seleniumGrid" />
+	</classes>
+  </test>
+   <test name="Test_Cases_for_WEB1" group-by-instances="true">
+      <parameter name="platform" value="WINDOWS"/>
+      <parameter name="browser" value="chrome"/>
+      <parameter name="url" value="https://www.google.com/drive/"/>
+	<classes>
+	   	<class name="com.RelianceJio.srikanta.GRID.seleniumGrid" />
+	</classes>
+  </test>
+</suite>
