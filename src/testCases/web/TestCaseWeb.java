@@ -75,7 +75,7 @@ public class TestCaseWeb {
 	   objwait.setIWaitS(driver, 10);
 	}
 
-   @Test(priority=1, alwaysRun=true, successPercentage =100)
+   @Test(priority=0, alwaysRun=true, successPercentage =100)
 	public void test_1_TestCase2()
 	{
 	   objwait.setIWaitS(driver, 10);
@@ -89,6 +89,14 @@ public class TestCaseWeb {
 	   objAssert.assertEquals( pagEle.byCSSPath(driver, ".lc-M").getText(),"1 upload complete");
 	   objwait.setIWaitS(driver, 10);
 	}
+   @Test(priority=0, alwaysRun=true, successPercentage =100)
+  	public void test_1_crossplatform()
+  	{
+	   pagEle.byXpath(driver, ".//*[@id='gbqfqwb']/table/tbody/tr/td").sendKeys("test.jpg");
+	   pagEle.byXpath(driver, ".//*[@id='gbqfb']").click();
+	   objAssert.assertEquals( pagEle.byXpath(driver, ".//*[@id=':9j.0ByC_66XJxPtTR1hQbTd1MWZ3RDA']/div[2]/div[3]/div/div[3]").getText(),"test.jpg");
+	   
+  	}
 	
    @AfterClass(groups = {"tearDown"})
 	public void tearDown()

@@ -2,41 +2,41 @@
 <testng-results skipped="0" failed="1" total="2" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="83885" started-at="2016-04-11T09:50:04Z" finished-at="2016-04-11T09:51:28Z">
+  <suite name="Default suite" duration-ms="83867" started-at="2016-04-11T10:03:29Z" finished-at="2016-04-11T10:04:53Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="83885" started-at="2016-04-11T09:50:04Z" finished-at="2016-04-11T09:51:28Z">
+    <test name="Default test" duration-ms="83867" started-at="2016-04-11T10:03:29Z" finished-at="2016-04-11T10:04:53Z">
       <class name="testCases.web.TestCaseWeb">
-        <test-method status="PASS" signature="setUpEnvironment()[pri:0, instance:testCases.web.TestCaseWeb@7a0ac6e3]" name="setUpEnvironment" is-config="true" duration-ms="37773" started-at="2016-04-11T15:20:04Z" finished-at="2016-04-11T15:20:42Z">
+        <test-method status="PASS" signature="setUpEnvironment()[pri:0, instance:testCases.web.TestCaseWeb@7a0ac6e3]" name="setUpEnvironment" is-config="true" duration-ms="40795" started-at="2016-04-11T15:33:29Z" finished-at="2016-04-11T15:34:10Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpEnvironment -->
-        <test-method status="PASS" signature="test_1_TestCase1()[pri:0, instance:testCases.web.TestCaseWeb@7a0ac6e3]" name="test_1_TestCase1" duration-ms="7732" started-at="2016-04-11T15:20:42Z" finished-at="2016-04-11T15:20:49Z">
+        <test-method status="PASS" signature="test_1_TestCase1()[pri:0, instance:testCases.web.TestCaseWeb@7a0ac6e3]" name="test_1_TestCase1" duration-ms="6914" started-at="2016-04-11T15:34:10Z" finished-at="2016-04-11T15:34:17Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test_1_TestCase1 -->
-        <test-method status="FAIL" signature="test_1_TestCase2()[pri:1, instance:testCases.web.TestCaseWeb@7a0ac6e3]" name="test_1_TestCase2" duration-ms="32896" started-at="2016-04-11T15:20:49Z" finished-at="2016-04-11T15:21:22Z">
+        <test-method status="FAIL" signature="test_1_TestCase2()[pri:0, instance:testCases.web.TestCaseWeb@7a0ac6e3]" name="test_1_TestCase2" duration-ms="29363" started-at="2016-04-11T15:34:17Z" finished-at="2016-04-11T15:34:46Z">
           <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
               <![CDATA[Unable to locate element: {"method":"id","selector":".//*[@id=':5f']/div/span[2]/span[1]/div"}
-Command duration or timeout: 10.25 seconds
+Command duration or timeout: 10.12 seconds
 For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '2.53.0', revision: '35ae25b1534ae328c771e0856c93e187490ca824', time: '2016-03-15 10:43:46'
 System info: host: 'pclap-002', ip: '172.16.146.24', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_65'
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
 Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=45.0.1, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
-Session ID: 8d06392d-75a1-46d1-8e6d-ff460fe9b33d
+Session ID: 8a89eea6-2bd6-4f59-a090-807718fa5fad
 *** Element info: {Using=id, value=.//*[@id=':5f']/div/span[2]/span[1]/div}]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.openqa.selenium.NoSuchElementException: Unable to locate element: {"method":"id","selector":".//*[@id=':5f']/div/span[2]/span[1]/div"}
-Command duration or timeout: 10.25 seconds
+Command duration or timeout: 10.12 seconds
 For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '2.53.0', revision: '35ae25b1534ae328c771e0856c93e187490ca824', time: '2016-03-15 10:43:46'
 System info: host: 'pclap-002', ip: '172.16.146.24', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_65'
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
 Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=45.0.1, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
-Session ID: 8d06392d-75a1-46d1-8e6d-ff460fe9b33d
+Session ID: 8a89eea6-2bd6-4f59-a090-807718fa5fad
 *** Element info: {Using=id, value=.//*[@id=':5f']/div/span[2]/span[1]/div}
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
@@ -80,15 +80,15 @@ For documentation on this error, please visit: http://seleniumhq.org/exceptions/
 Build info: version: '2.53.0', revision: '35ae25b1534ae328c771e0856c93e187490ca824', time: '2016-03-15 10:43:46'
 System info: host: 'pclap-002', ip: '172.16.146.24', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_65'
 Driver info: driver.version: unknown
-	at <anonymous class>.FirefoxDriver.prototype.findElementInternal_(file:///C:/Users/user/AppData/Local/Temp/anonymous1382578914644926011webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10770)
-	at <anonymous class>.fxdriver.Timer.prototype.setTimeout/<.notify(file:///C:/Users/user/AppData/Local/Temp/anonymous1382578914644926011webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:625)
+	at <anonymous class>.FirefoxDriver.prototype.findElementInternal_(file:///C:/Users/user/AppData/Local/Temp/anonymous5946152772321666051webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10770)
+	at <anonymous class>.fxdriver.Timer.prototype.setTimeout/<.notify(file:///C:/Users/user/AppData/Local/Temp/anonymous5946152772321666051webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:625)
 ]]>
             </full-stacktrace>
           </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test_1_TestCase2 -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:testCases.web.TestCaseWeb@7a0ac6e3]" name="tearDown" is-config="true" duration-ms="5400" started-at="2016-04-11T15:21:22Z" finished-at="2016-04-11T15:21:28Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:testCases.web.TestCaseWeb@7a0ac6e3]" name="tearDown" is-config="true" duration-ms="6649" started-at="2016-04-11T15:34:46Z" finished-at="2016-04-11T15:34:53Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

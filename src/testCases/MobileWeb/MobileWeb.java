@@ -29,12 +29,13 @@ public class MobileWeb {
 		//objReport.startRecorder();
 		driver = objDriver.setAndroidBrowser(sMobileID,sMobileVersion,sAppiumServerRunningAt);
 		objReport.writeTestReports(driver);
-		objBasic.openUrlInBrowser(driver, "Url to Invoke");
+		objBasic.openUrlInBrowser(driver, "https://www.google.com/drive/");
 		//Setting applciation url ready for testing
 	}
 	
 	@Test(priority=21, alwaysRun=true,  successPercentage =100)
 	public void test_1_TestCase1() 
+	
 	{
 		
 	}

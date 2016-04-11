@@ -56,27 +56,50 @@ public class androidApp {
 			pagEle.byName(driver, "ACCEPT").click();
 			pagEle.byId(driver, "com.google.android.gms:id/suw_navbar_more").click();
 			pagEle.byId(driver, "com.google.android.gms:id/suw_navbar_next").click();
+			objwait.setIWaitS(driver, 10);
 
 			  }catch(Exception e){
 			   
 			  }
 		pagEle.byId(driver, "com.google.android.apps.docs:id/doclist_create_button").click();
 		pagEle.byId(driver, "com.google.android.apps.docs:id/choice_create_upload").click();
-		pagEle.byName(driver, "Recent").click();
+		pagEle.byName(driver, "Images").click();
 		pagEle.byclassName1(driver, "android.widget.RelativeLayout", 1).click();
 		pagEle.byclassName1(driver, "android.view.View", 0).click();
 		String test = pagEle.byclassName1(driver, "android.view.View", 0).getText();
 		pagEle.byId(driver, "com.google.android.apps.photos:id/done_button").click();
 		objAssert.assertEquals(pagEle.byId(driver, "com.google.android.apps.docs:id/doc_entry_root").getText(),test );
+		objwait.setIWaitS(driver, 10);
 		
+	}
+
+	@Test(priority=1, alwaysRun=true, successPercentage =100)
+	public void test_TestCasecrossplatform() 
+	{
+		pagEle.byclassName(driver, "android.widget.ImageButton").click();
+		pagEle.byclassName1(driver, "android.widget.LinearLayout",3).click();
+		pagEle.byId(driver, "com.google.android.apps.docs:id/doc_entry_root").click();
+		pagEle.byId(driver, "com.google.android.apps.docs:id/open_detail_panel").click();
+		pagEle.byId1(driver, "com.google.android.apps.docs:id/menu_icon",6).click();
+		pagEle.byId(driver, "com.google.android.apps.docs:id/new_name").sendKeys("test.jpg");
+		pagEle.byId(driver, "android:id/button1").click();
 		
 	}
 	
 	@Test(priority=1, alwaysRun=true, successPercentage =100)
-	public void test_TestCase2() 
+	public void test_TestCasewith_noNetwork() 
 	{
 		NetworkConnectionSetting n = new NetworkConnectionSetting(false, false, true);
 		driver.setNetworkConnection(n);
+		pagEle.byId(driver, "com.google.android.apps.docs:id/doclist_create_button").click();
+		pagEle.byId(driver, "com.google.android.apps.docs:id/choice_create_upload").click();
+		pagEle.byName(driver, "Images").click();
+		pagEle.byclassName1(driver, "android.widget.RelativeLayout", 1).click();
+		pagEle.byclassName1(driver, "android.view.View", 0).click();
+		objwait.setIWaitS(driver, 10);
+		driver.openNotifications();
+		
+		objAssert.assertEquals(pagEle.byId(driver, "com.google.android.apps.docs:id/offline_status").getText(),"Waiting for network");
 		Reporter.log("");
 		
 	}
