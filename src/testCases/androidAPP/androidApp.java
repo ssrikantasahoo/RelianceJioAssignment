@@ -16,13 +16,20 @@ import org.testng.annotations.Test;
 import com.RelianceJio.srikanta.basic.BasicFunctions;
 import com.RelianceJio.srikanta.driver.Drivers;
 import com.RelianceJio.srikanta.feature.Reports;
+import com.RelianceJio.srikanta.ui.PageElements;
+import com.RelianceJio.srikanta.ui.PageInteraction;
+import com.RelianceJio.srikanta.ui.PageWaits;
+import com.RelianceJio.srikanta.ui.UIAssert;
 
 public class androidApp {
 	
 	Drivers objDriver = new Drivers();
-	Reports objReports = new Reports();
+	Reports objReports = new  Reports();
 	BasicFunctions objbasic = new BasicFunctions();
-	
+	PageInteraction objPageInteract = new PageInteraction();
+    UIAssert objAssert = new UIAssert();
+	PageWaits objwait = new PageWaits();
+	PageElements pagEle = new PageElements();
 	
 	AndroidDriver<MobileElement> driver = null;
 	
@@ -41,7 +48,27 @@ public class androidApp {
 	public void test_TestCase1() 
 	{
 		
-		Reporter.log("");
+		try{
+			pagEle.byId(driver, "identifierId").sendKeys("srikantareljio");
+			pagEle.byId(driver, "identifierNext").click();
+			pagEle.byId(driver, "password").sendKeys("123sri45");
+			pagEle.byId(driver, "passwordNext").click();
+			pagEle.byName(driver, "ACCEPT").click();
+			pagEle.byId(driver, "com.google.android.gms:id/suw_navbar_more").click();
+			pagEle.byId(driver, "com.google.android.gms:id/suw_navbar_next").click();
+
+			  }catch(Exception e){
+			   
+			  }
+		pagEle.byId(driver, "com.google.android.apps.docs:id/doclist_create_button").click();
+		pagEle.byId(driver, "com.google.android.apps.docs:id/choice_create_upload").click();
+		pagEle.byName(driver, "Recent").click();
+		pagEle.byclassName1(driver, "android.widget.RelativeLayout", 1).click();
+		pagEle.byclassName1(driver, "android.view.View", 0).click();
+		String test = pagEle.byclassName1(driver, "android.view.View", 0).getText();
+		pagEle.byId(driver, "com.google.android.apps.photos:id/done_button").click();
+		objAssert.assertEquals(pagEle.byId(driver, "com.google.android.apps.docs:id/doc_entry_root").getText(),test );
+		
 		
 	}
 	

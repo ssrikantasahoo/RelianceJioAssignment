@@ -13,6 +13,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.testng.Reporter;
 
+
 import com.RelianceJio.srikanta.basic.DataReader;
 
 import atu.testng.reports.ATUReports;
@@ -20,11 +21,13 @@ import atu.testng.reports.utils.Utils;
 import atu.testrecorder.ATUTestRecorder;
 import atu.testrecorder.exceptions.ATUTestRecorderException;
 
+
 public class Reports {
+	
 	
 	DataReader objProp = new DataReader();
 	ATUTestRecorder recorder;
-	public WebDriver driver;
+	public static WebDriver driver;
 	Date currentDate = new Date(System.currentTimeMillis());
 	
 	 {
@@ -56,6 +59,7 @@ public class Reports {
 			FileUtils.copyFile(objScreenCaptureFile ,copyFile);
 			Reporter.log("<a href=" + sFilePath + " target='_blank' >" + snapshotName + "</a>");
 			
+			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -65,8 +69,9 @@ public class Reports {
 	public void writeTestReports(WebDriver driver)
 	{
 		ATUReports.setWebDriver(driver);
-		ATUReports.setAuthorInfo("Srikanta", Utils.getCurrentTime(),"1.0");
+		//ATUReports.setAuthorInfo("srikanta", Utils.getCurrentTime(),"1.0");
 		ATUReports.indexPageDescription = "<h3>E.On</h3><br><b>RelianceJio Automation Report</b>";
+		
 	}
 	public ATUTestRecorder setVideoRecorder()
 	{
@@ -118,6 +123,9 @@ public class Reports {
 		}
 	}
 
-
+public static void main (String args[]){
+	Reports a =new Reports();
+	a.writeTestReports(driver);
+}
 
 }

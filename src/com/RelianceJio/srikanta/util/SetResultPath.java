@@ -6,6 +6,12 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Properties;
 
+import org.testng.annotations.Listeners;
+
+import atu.testng.reports.listeners.ATUReportsListener;
+import atu.testng.reports.listeners.ConfigurationListener;
+import atu.testng.reports.listeners.MethodListener;
+
 
 
 public class SetResultPath {
@@ -17,7 +23,7 @@ public class SetResultPath {
 	public void setResultsPath(String sPaths) throws IOException
 	{
 		objProf_1 = new Properties();
-		fsrikantaConfig = new File("\\config\\srikanta.properties");
+		fsrikantaConfig = new File(System.getProperty("user.dir")+"\\config\\srikanta.properties");
 		System.out.println(fsrikantaConfig);
 		proFile_1 = new FileInputStream(fsrikantaConfig.getPath());
 		objProf_1.load(proFile_1);
@@ -57,7 +63,7 @@ public class SetResultPath {
 		
 		objProf_2 = new Properties();
 		
-		fsrikantaReportConfig = new File("\\config\\atu.properties"); 
+		fsrikantaReportConfig = new File(System.getProperty("user.dir")+"\\config\\atu.properties"); 
 		proFile_2 = new FileInputStream(fsrikantaReportConfig.getPath());
 		
 		objProf_2.load(proFile_2);
@@ -78,6 +84,7 @@ public class SetResultPath {
 	{
 		SetResultPath objsetPath = new SetResultPath();
 		objsetPath.setResultsPath(args[0]);
+		
 		
 	}
 

@@ -10,8 +10,13 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
+
+import atu.testng.reports.listeners.ATUReportsListener;
+import atu.testng.reports.listeners.ConfigurationListener;
+import atu.testng.reports.listeners.MethodListener;
 
 import com.RelianceJio.srikanta.basic.BasicFunctions;
 import com.RelianceJio.srikanta.driver.Drivers;
@@ -33,10 +38,14 @@ public class TestCaseWeb {
 	PageElements pagEle = new PageElements();
 	
 	@BeforeClass(groups = {"setUp"})
-	@Parameters({"url","browser"})
-	public void setUpEnvironment(String browser,String url) throws IOException
-	{
-		driver = objDriver.setWebBrowser(browser);
+//	@Parameters({"url","browser"})
+//	public void setUpEnvironment(String browser,String url) throws IOException
+//	{
+	
+	public void setUpEnvironment() throws IOException
+		{
+		//driver = objDriver.setWebBrowser(browser);
+		driver = objDriver.setWebBrowser("firefox");
 		driver = objDriver.setFirefoxBrowser();
 		objReport.writeTestReports(driver);
 		objReport.startRecorder();
@@ -46,7 +55,8 @@ public class TestCaseWeb {
 			
 			e.printStackTrace();
 		}
-		objbasic.openUrlInBrowser(driver, url);
+//		objbasic.openUrlInBrowser(driver, url);
+		objbasic.openUrlInBrowser(driver, "https://www.google.com/drive/");
 		objwait.setIWaitS(driver, 10);
 	}
 
@@ -64,7 +74,21 @@ public class TestCaseWeb {
 	   objAssert.assertEquals( pagEle.byCSSPath(driver, "#errormsg_0_Passwd").getText(),"The email and password you entered don't match.");
 	   objwait.setIWaitS(driver, 10);
 	}
-	  
+
+   @Test(priority=1, alwaysRun=true, successPercentage =100)
+	public void test_1_TestCase2()
+	{
+	   objwait.setIWaitS(driver, 10);
+	   pagEle.byCSSPath(driver, "#Passwd").sendKeys("123sri45");
+	   pagEle.byCSSPath(driver, "#signIn").click();
+	   objwait.setIWaitS(driver, 10);
+	 
+	   pagEle.byCSSPath(driver, "div[guidedhelpid=\"new_menu_button\"]").click();
+	   pagEle.byId(driver, ".//*[@id=':5f']/div/span[2]/span[1]/div").sendKeys(System.getProperty("user.dir")+"\\lib\\add product.jpg");
+	   objwait.setIWaitS(driver, 10);
+	   objAssert.assertEquals( pagEle.byCSSPath(driver, ".lc-M").getText(),"1 upload complete");
+	   objwait.setIWaitS(driver, 10);
+	}
 	
    @AfterClass(groups = {"tearDown"})
 	public void tearDown()

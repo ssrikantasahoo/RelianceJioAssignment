@@ -38,5 +38,34 @@ Select selectRef = null;
 	{
 		return driver.findElement(By.id(sId));
 	}
+	public WebElement byclassName1(WebDriver driver, String sClassId,int i)
+	{
+		return driver.findElements(By.className(sClassId)).get(i);
+	}
+	
+	public WebElement byName1(WebDriver driver, String sNameId,int i)
+	{
+		return driver.findElements(By.name(sNameId)).get(i);
+	}
+	
+	public WebElement byLinkText1(WebDriver driver, String sLinkText,int i)
+	{
+		return driver.findElements(By.linkText(sLinkText)).get(i);
+	}
+	
+	public WebElement byXpath1(WebDriver driver,String sXpathString,int i)
+	{
+		return driver.findElements(By.xpath(sXpathString)).get(i);
+	}
+	
+	public WebElement byCSSPath1(WebDriver driver,String sCssSelector,int i)
+	{
+		return driver.findElements(By.cssSelector(sCssSelector)).get(i);
+	}
+	
+	public WebElement byId1(WebDriver driver,String sId,int i)
+	{
+		return driver.findElements(By.id(sId)).get(i);
+	}
 
 }
