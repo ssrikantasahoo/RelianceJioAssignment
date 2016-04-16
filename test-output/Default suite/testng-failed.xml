@@ -6,15 +6,4 @@
       <class name="testCases.web.TestCaseWeb"/>
     </classes>
   </test> <!-- Default test -->
-  <test name="Default test(failed)">
-    <classes>
-      <class name="testCases.web.TestCaseWeb">
-        <methods>
-          <include name="setUpEnvironment"/>
-          <include name="test_1_TestCase2"/>
-          <include name="tearDown"/>
-        </methods>
-      </class> <!-- testCases.web.TestCaseWeb -->
-    </classes>
-  </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

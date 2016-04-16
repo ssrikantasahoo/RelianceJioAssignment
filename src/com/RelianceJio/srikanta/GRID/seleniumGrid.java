@@ -13,7 +13,7 @@ import org.testng.annotations.Test;
 
 import com.RelianceJio.srikanta.basic.BasicFunctions;
 import com.RelianceJio.srikanta.driver.Drivers;
-import com.RelianceJio.srikanta.feature.Reports;
+
 import com.RelianceJio.srikanta.ui.PageElements;
 import com.RelianceJio.srikanta.ui.PageInteraction;
 import com.RelianceJio.srikanta.ui.PageWaits;
@@ -22,7 +22,7 @@ import com.RelianceJio.srikanta.ui.UIAssert;
 public class seleniumGrid {
 	
 	Drivers objDriver = new Drivers();
-	Reports objReport = new  Reports();
+	
 	BasicFunctions objbasic = new BasicFunctions();
 	PageInteraction objPageInteract = new PageInteraction();
     UIAssert objAssert = new UIAssert();
@@ -49,8 +49,7 @@ public class seleniumGrid {
 		if (browser.equalsIgnoreCase("chrome")) 
 			caps = DesiredCapabilities.chrome(); 
 		driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),caps); 
-		objReport.writeTestReports(driver);
-		objReport.startRecorder();
+		
 		objwait.setIWaitS(driver, 10);
 		driver.manage().window().maximize();
 		objbasic.openUrlInBrowser(driver, url);
@@ -76,7 +75,7 @@ public class seleniumGrid {
 	public void tearDown()
 	{
 	   objDriver.closeDriver(driver);
-	   objReport.stopRecorder();
+	   
 	}
 
 		

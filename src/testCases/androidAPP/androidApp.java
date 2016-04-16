@@ -15,7 +15,7 @@ import org.testng.annotations.Test;
 
 import com.RelianceJio.srikanta.basic.BasicFunctions;
 import com.RelianceJio.srikanta.driver.Drivers;
-import com.RelianceJio.srikanta.feature.Reports;
+
 import com.RelianceJio.srikanta.ui.PageElements;
 import com.RelianceJio.srikanta.ui.PageInteraction;
 import com.RelianceJio.srikanta.ui.PageWaits;
@@ -24,7 +24,7 @@ import com.RelianceJio.srikanta.ui.UIAssert;
 public class androidApp {
 	
 	Drivers objDriver = new Drivers();
-	Reports objReports = new  Reports();
+	
 	BasicFunctions objbasic = new BasicFunctions();
 	PageInteraction objPageInteract = new PageInteraction();
     UIAssert objAssert = new UIAssert();
@@ -38,7 +38,7 @@ public class androidApp {
 	public void setUpEnvironment(String sAppEnvironment, String url, String sDBEnvironment, String MobileID,String MobileVersion,String AppPath, String PacKageName,String ActivityName,
 			String AppiumRunningAt) throws IOException
 	{
-		objReports.writeTestReports(driver);
+		
 		driver = objDriver.setAndroidApp(MobileID, MobileVersion, AppPath, PacKageName, ActivityName, AppiumRunningAt);
 		//Setting applciation url ready for testing
 		objbasic.openUrlInBrowser(driver, url);

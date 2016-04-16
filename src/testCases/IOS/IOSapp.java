@@ -13,12 +13,12 @@ import org.testng.annotations.Test;
 
 import com.RelianceJio.srikanta.basic.BasicFunctions;
 import com.RelianceJio.srikanta.driver.Drivers;
-import com.RelianceJio.srikanta.feature.Reports;
+
 
 public class IOSapp {
 
 	Drivers objDriver = new Drivers();
-	Reports objReports = new Reports();
+	
 	BasicFunctions objbasic = new BasicFunctions();
 	
 	
@@ -29,7 +29,7 @@ public class IOSapp {
 	public void setUpEnvironment(String sDeviceName, String url, String sOSVersion, String sAppPath,String sServerName,String sUDID,
 			String AppiumRunningAt) throws IOException
 	{
-		objReports.writeTestReports(driver);
+		
 		driver = objDriver.setIOSApp(sDeviceName, sOSVersion, sAppPath, sServerName, sUDID);
 		//Setting applciation url ready for testing
 		objbasic.openUrlInBrowser(driver, url);
