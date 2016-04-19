@@ -6,6 +6,7 @@ import java.awt.Robot;
 import java.awt.Toolkit;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
+import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -200,14 +201,18 @@ public class TestCaseWeb {
 	     Thread.sleep(10000l);
 	     ATUReports.add("Pass Step", LogAs.PASSED, new CaptureScreen(
 					ScreenshotOf.DESKTOP));
+	     if(objDriver.isthisWindowsOS()){
 	     ATUReports.add("enter path of image in syatem windows", LogAs.INFO, new CaptureScreen(
 					ScreenshotOf.BROWSER_PAGE));
+	     
 	     StringSelection ss = new StringSelection("C:\\Users\\user\\workspace\\RelianceJioAssignment\\lib\\addproduct.jpg");
      	 Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, null);
      	ATUReports.add("Pass Step", LogAs.PASSED, new CaptureScreen(
 				ScreenshotOf.DESKTOP));
      	 ATUReports.add("Click on open button in system windows", LogAs.INFO, new CaptureScreen(
  				ScreenshotOf.BROWSER_PAGE));
+     	
+     	
      	Robot robot = new Robot();
     	robot.keyPress(KeyEvent.VK_ENTER);
     	robot.keyRelease(KeyEvent.VK_ENTER);
@@ -215,9 +220,68 @@ public class TestCaseWeb {
     	robot.keyPress(KeyEvent.VK_V);
     	robot.keyRelease(KeyEvent.VK_V);
     	robot.keyRelease(KeyEvent.VK_CONTROL);
+    	robot.delay(500);
     	robot.keyPress(KeyEvent.VK_ENTER);
     	robot.keyRelease(KeyEvent.VK_ENTER);
-    	Thread.sleep(10000l);
+    	robot.delay(2000);
+     	}else{
+     		File file = new File("");
+            
+            StringSelection stringSelection= new StringSelection(file.getAbsolutePath());
+     	   //Copy to clipboard
+            
+            Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection, null);
+             
+            Robot robot = new Robot();
+             
+            // Cmd + Tab is needed since it launches a Java app and the browser looses focus
+             
+            robot.keyPress(KeyEvent.VK_META);
+             
+            robot.keyPress(KeyEvent.VK_TAB);
+             
+            robot.keyRelease(KeyEvent.VK_META);
+             
+            robot.keyRelease(KeyEvent.VK_TAB);
+             
+            robot.delay(500);
+             
+            //Open Goto window
+             
+            robot.keyPress(KeyEvent.VK_META);
+             
+            robot.keyPress(KeyEvent.VK_SHIFT);
+             
+            robot.keyPress(KeyEvent.VK_G);
+             
+            robot.keyRelease(KeyEvent.VK_META);
+             
+            robot.keyRelease(KeyEvent.VK_SHIFT);
+             
+            robot.keyRelease(KeyEvent.VK_G);
+             
+            //Paste the clipboard value
+             
+            robot.keyPress(KeyEvent.VK_META);
+             
+            robot.keyPress(KeyEvent.VK_V);
+             
+            robot.keyRelease(KeyEvent.VK_META);
+             
+            robot.keyRelease(KeyEvent.VK_V);
+             
+            //Press Enter key to close the Goto window and Upload window
+             
+            robot.keyPress(KeyEvent.VK_ENTER);
+             
+            robot.keyRelease(KeyEvent.VK_ENTER);
+             
+            robot.delay(500);
+             
+            robot.keyPress(KeyEvent.VK_ENTER);
+             
+            robot.keyRelease(KeyEvent.VK_ENTER);
+     	}
     	ATUReports.add("Pass Step", LogAs.PASSED, new CaptureScreen(
 				ScreenshotOf.DESKTOP));
     	 ATUReports.add("wait for complete the upload", LogAs.INFO, new CaptureScreen(
