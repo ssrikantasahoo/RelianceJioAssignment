@@ -205,7 +205,7 @@ public class TestCaseWeb {
 	     ATUReports.add("enter path of image in syatem windows", LogAs.INFO, new CaptureScreen(
 					ScreenshotOf.BROWSER_PAGE));
 	     
-	     StringSelection ss = new StringSelection("C:\\Users\\user\\workspace\\RelianceJioAssignment\\lib\\addproduct.jpg");
+	     StringSelection ss = new StringSelection(System.getProperty("user.dir")+"\\lib\\addproduct.jpg");
      	 Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, null);
      	ATUReports.add("Pass Step", LogAs.PASSED, new CaptureScreen(
 				ScreenshotOf.DESKTOP));
@@ -225,7 +225,7 @@ public class TestCaseWeb {
     	robot.keyRelease(KeyEvent.VK_ENTER);
     	robot.delay(2000);
      	}else{
-     		File file = new File("");
+     		File file = new File(System.getProperty("user.dir")+"\\lib\\addproduct.jpg");
             
             StringSelection stringSelection= new StringSelection(file.getAbsolutePath());
      	   //Copy to clipboard
