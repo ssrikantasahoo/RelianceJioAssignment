@@ -48,7 +48,7 @@ import com.RelianceJio.srikanta.ui.*;
     MethodListener.class })
 public class TestCaseWeb {
 	{
-		System.setProperty("atu.reporter.config", "C:\\Users\\user\\workspace\\RelianceJioAssignment\\config\\atu.properties");
+		System.setProperty("atu.reporter.config", System.getProperty("user.dir")+"\\config\\atu.properties");
 		
 	}
 	
@@ -74,7 +74,7 @@ public class TestCaseWeb {
 		{
 		
 
-        recorder = new ATUTestRecorder("C:/Users/user/workspace/RelianceJioAssignment/ScriptVideos","reliancejio.mov",false);
+        recorder = new ATUTestRecorder(System.getProperty("user.dir")+"\\ScriptVideos","reliancejio.mov",false);
         recorder.start(); 
        
 		
